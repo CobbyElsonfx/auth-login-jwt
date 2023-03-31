@@ -7,8 +7,8 @@ const port = process.env.PORT || 3000
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var loginFormRouter = require("./routes/loginForm")
-
+var loginRouter = require('./routes/login')
+var signUpRouter = require('./routes/signup')
 var app = express();
 
 // view engine setup
@@ -23,7 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/loginForm",loginFormRouter )
+app.use('/login', loginRouter);
+app.use('/signup', signUpRouter)
 
 
 

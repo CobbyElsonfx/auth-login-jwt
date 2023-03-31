@@ -17,14 +17,14 @@
     position: absolute;
     display: block;
     list-style: none;
-    width: 20px;
+    width: 30px;
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
-    bottom: -150px;  
+    bottom: -190px;  
 }
 .circles li:nth-child(1){
-    left: 25%;
+    left: 45%;
     width: 80px;
     height: 80px;
     animation-delay: 0s;
@@ -34,7 +34,7 @@
 .circles li:nth-child(2){
     left: 10%;
     width: 20px;
-    height: 20px;
+    height: 40px;
     animation-delay: 2s;
     animation-duration: 12s;
 }
@@ -55,7 +55,7 @@
 }
  
 .circles li:nth-child(5){
-    left: 65%;
+    left: 75%;
     width: 20px;
     height: 20px;
     animation-delay: 0s;
@@ -64,7 +64,7 @@
 .circles li:nth-child(6){
     left: 75%;
     width: 110px;
-    height: 110px;
+    height: 150px;
     animation-delay: 3s;
 }
  
@@ -94,7 +94,7 @@
 .circles li:nth-child(10){
     left: 85%;
     width: 150px;
-    height: 150px;
+    height: 250px;
     animation-delay: 0s;
     animation-duration: 11s;
 }
