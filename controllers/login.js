@@ -1,5 +1,5 @@
 const  login_get = (req,res)=>{
- res.send("Get request Coming from the login controller")
+ res.render("loginForm")
 }
 const  login_post = (req,res) =>{
     res.send("Post request coming from the loin controllers")

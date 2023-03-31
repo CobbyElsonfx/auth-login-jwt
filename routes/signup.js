@@ -4,8 +4,9 @@ var authController = require("../controllers/signup")
 
 
 
-router.get("/",authController.signUp_get )
-router.post("/", authController.signUp_post)
+router.route("/")
+.get(authController.signUp_get )   // to avoid code redundancy 
+.post(authController.signUp_post)
 
 
 

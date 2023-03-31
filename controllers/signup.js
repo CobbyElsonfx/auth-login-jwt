@@ -1,9 +1,20 @@
+var User = require("../models/user")
+
 const signUp_get = (req,res)=>{
-    res.send("Get request Coming from the signup controller")
+    res.render("signUpForm")
    }
 
-const  signUp_post = (req,res)=>{
-    res.send("Post request coming from the sigup controllers")
+const  signUp_post = async (req,res)=>{
+    const {email , password} = req.email
+    try {
+        const newUser = await User.create({email,password}) 
+        res.status(200).json(newUser)
+
+        
+    } catch (error) {
+        console.log(error)
+        res.status("400").send("User not created")
+    }
 }
 
 

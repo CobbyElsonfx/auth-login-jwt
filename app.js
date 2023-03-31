@@ -3,7 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var dbConnection = require('./db/connect')
+var dotenv = require("dotenv")
+dotenv.config()
+
+
 const port = process.env.PORT || 3000
+const dbUrl = process.env.MONGO_URI
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,12 +36,22 @@ app.use('/signup', signUpRouter)
 
 
 
-app.listen(port,()=>{
-  console.log(`Listening at Port ${[port]}`)
-})
+const startServer = async () =>{
+   try {
+     await  dbConnection(dbUrl)
+     app.listen(port,()=>{
+      console.log(`Server started listening at Port ${port}`)
+     } )
+ 
+   } catch (error) {
+    console.log(error)
+    
+   }
+}
 
 
 
+startServer()
 
 
 
