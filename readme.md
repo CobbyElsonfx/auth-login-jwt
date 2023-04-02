@@ -36,9 +36,11 @@ sql
 
     Open your browser and go to http://localhost:3000 to see the login form.
 # Learn
-  In order access a data sent as a request via a method  such as post, we need to use a middleware called express.json() which converts the sent data into  jsobjects and attaches it to the req handler which make it posible for us to access.
+ 1.  In order access a data sent as a request via a method  such as post, we need to use a middleware called express.json() which converts the sent data into  jsobjects and attaches it to the req handler which make it posible for us to access. Usin gthe req.body
 
-  
+ 2. Emails can be validated in the models directory
+
+
 # Usage
 
 To use the login form, simply enter your email and password and click the "Submit" button. If your credentials are valid, you will be redirected to the dashboard page. If not, you will see an error message.

@@ -108,7 +108,7 @@
  
     100%{
         transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
+        opacity: 1;
         border-radius: 50%;
     }
  
