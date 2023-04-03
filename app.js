@@ -8,6 +8,7 @@ var dotenv = require("dotenv")
 dotenv.config()
 
 
+
 const port = process.env.PORT || 3000
 const dbUrl = process.env.MONGO_URI
 
@@ -21,6 +22,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+//middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +37,7 @@ app.use('/signup', signUpRouter)
 
 
 
-
+//Not using the default bin startup directory 
 
 const startServer = async () =>{
    try {
