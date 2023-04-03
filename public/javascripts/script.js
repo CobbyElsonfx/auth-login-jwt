@@ -35,6 +35,11 @@ form.addEventListener("submit", async (ev)=>{
                 passwordError.textContent = data.errors.password.message   
             }
 
+            //if the data contains the instance of the user id wich was sent as response during the authentication
+            if(data.user){
+              location.asign("/") //redirect the user to the home page/ "/" endpoint
+            }
+
         } catch (error) {
             console.log(error)
             
