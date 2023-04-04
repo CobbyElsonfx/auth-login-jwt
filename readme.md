@@ -40,6 +40,8 @@ sql
 
  2. Emails can be validated in the models directory
 
+ 3. If your decide to put the javascript code in the js direct it will load before the request html page, causing you to get form is null errors message in the browser console
+
 
 # Usage
 
