@@ -44,7 +44,7 @@
               {{!-- forms --}}
 
               <script>
-                const form = document.getElementById("form")
+                const form = document.querySelector("form")
 
 
                     //sign uplo
@@ -74,13 +74,13 @@
                                 // we use the fetch method to post data into mongodb via the /signup endpoint
                                 // so we can access the res it received from the post 
                                 const  data = await res.json() // since this is also a promise we must await for the res  
-
+                                console.log("this is the data", data.errors)
                                 // Must check for errors or succes
                                 //if errors are present in the data received we can the access the message we defined in the handleError function 
                                 // in the sigup.js file
                                 if(data.errors){
-                                    emailError.textContent = data.errors.email.message  // update the UI with the respective error message
-                                    passwordError.textContent = data.errors.password.message   
+                                    emailError.textContent = data.errors.email // update the UI with the respective error message
+                                    passwordError.textContent = data.errors.password  
                                 }
 
                                 //if the data contains the instance of the user id wich was sent as response during the authentication

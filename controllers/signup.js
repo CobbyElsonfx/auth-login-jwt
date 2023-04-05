@@ -4,17 +4,17 @@ var jwt = require("jsonwebtoken")
 
 
 // trying to send the json error the user
-const handleError = (error) =>{
-    console.log(error.message,  error.code)
-    console.log(error)
+const handleError = (err) =>{
+    console.log(err.message,  err.code)
     let errors = {email:"" , password:""}
 
-    if(error.code ==  11000){
+    if(err.code ==  11000){
         errors.email = "Email already exist"
+        return errors
     }
 
-    if(error.message.includes("user validation failed:")){
-        Object.values(error.errors).forEach(({properties}) => {
+    if(err.message.includes("user validation failed")){
+        Object.values(err.errors).forEach(({properties}) => {
             errors[properties.path] = properties.message
             
         });
@@ -48,8 +48,9 @@ const  signUp_post = async (req,res)=>{
 
         
     } catch (error) {
-        handleError(error)
-        res.status(400).json(error)
+      const errors =   handleError(error)
+      console.log("I am here",errors)
+        res.status(400).json({errors})
     }
 }
 

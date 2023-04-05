@@ -98,7 +98,7 @@
             </div>
             <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
               <span>Don't have an account?</span>
-              <a href="#"
+              <a href="./signUpForm"
                 class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
                 up</a>
             </p>
@@ -145,8 +145,8 @@
                           //if errors are present in the data received we can the access the message we defined in the handleError function 
                           // in the sigup.js file
                           if(data.errors){
-                              emailError.textContent = data.errors.email.message  // update the UI with the respective error message
-                              passwordError.textContent = data.errors.password.message   
+                              emailError.textContent = data.errors.email  // update the UI with the respective error message
+                              passwordError.textContent = data.errors.password  
                           }
 
                           //if the data contains the instance of the user id wich was sent as response during the authentication

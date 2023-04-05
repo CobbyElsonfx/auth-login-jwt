@@ -39,7 +39,7 @@ userSchema.statics.login = async function(email, password){
      }
      throw Error ("Invalid Password")
     }
-    throw  Error ("Email does not exits")
+    throw  Error ("Email does not exist")
 
 }
 

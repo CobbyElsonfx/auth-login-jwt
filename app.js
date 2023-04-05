@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var dbConnection = require('./db/connect')
 var dotenv = require("dotenv")
+const  {requireAuth} = require("./middleware/requireAuth")
 dotenv.config()
 
 
@@ -31,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/private',requireAuth, usersRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signUpRouter)
 
