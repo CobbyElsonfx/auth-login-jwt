@@ -36,11 +36,11 @@ sql
 
     Open your browser and go to http://localhost:3000 to see the login form.
 # Learn
- 1.  In order access a data sent as a request via a method  such as post, we need to use a middleware called express.json() which converts the sent data into  jsobjects and attaches it to the req handler which make it posible for us to access. Usin gthe req.body
+ 1.  To access data sent through a method such as post, we need to use a middleware known as express.json(). This middleware is responsible for converting the sent data into JavaScript objects and attaching it to the req handler, which allows us to access it using the req.body method.
 
  2. Emails can be validated in the models directory
 
- 3. If your decide to put the javascript code in the js direct it will load before the request html page, causing you to get form is null errors message in the browser console
+ 3. If you choose to place the JavaScript code in the JS directory, it will be loaded before the requested HTML page, which may result in "form is null" error messages appearing in the browser console.
 
 
 # Usage
